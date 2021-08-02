@@ -46,6 +46,11 @@ print(len(samples))
 # noise *= np.exp(-time/5)
 # x = carrier + noise
 
+Pxx, freqs, bins, im = plt.specgram(samples, NFFT=1024, Fs=44100, noverlap=900)
+# plt.yscale('log')
+# plt.xscale('log')
+plt.show()
+
 # # Compute and plot the spectrogram.
 # f, t, Sxx = signal.spectrogram(x, fs)
 
