@@ -9,9 +9,9 @@ from os import path
 from pydub import AudioSegment
 
 # import files
-src = "piano2.wav"
+src = "assets/piano2.wav"
 # dst = "test.wav"
-dst = "piano3.wav"
+dst = "assets/piano3.wav"
 
 print("converting to wav file...")
 # sound = AudioSegment.from_mp3(src)
