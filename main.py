@@ -21,7 +21,7 @@ print("converting to wav file...")
 sound = AudioSegment.from_wav(src)
 print(sound.duration_seconds)
 sound = sound.set_channels(1)
-sound = sound.set_frame_rate(5000)
+sound = sound.set_frame_rate(5000) # sample rate in kHz
 sound.export(dst, format="wav")
 
 print("importing wav file...")
@@ -29,7 +29,7 @@ sample_rate, samples = wavfile.read(dst)
 print(f"sample_rate:\n{sample_rate}")
 print(f"samples:\n{samples}")
 print(len(samples))
-# sample_rate = 5
+# sample_rate = len(samples)
 # print(samples.tolist())
 
 # rng = np.random.default_rng()
@@ -50,7 +50,7 @@ print(len(samples))
 # f, t, Sxx = signal.spectrogram(x, fs)
 
 print("making spectrogram...")
-f, t, Sxx = signal.spectrogram(samples, sample_rate)
+f, t, Sxx = signal.spectrogram(samples, sample_rate, mode='magnitude')
 print(f"f:\n{f}")
 print(f"t:\n{t}")
 print(f"Sxx:\n{Sxx}")
