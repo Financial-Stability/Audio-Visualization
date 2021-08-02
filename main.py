@@ -29,7 +29,7 @@ sample_rate, samples = wavfile.read(dst)
 print(f"sample_rate:\n{sample_rate}")
 print(f"samples:\n{samples}")
 print(len(samples))
-# sample_rate = 1000
+# sample_rate = 5
 # print(samples.tolist())
 
 # rng = np.random.default_rng()
@@ -61,10 +61,13 @@ print("making graph...")
 # plt.xlabel('Time [sec]')
 # plt.show()
 
+# plt.pcolormesh(t, f, np.log10(Sxx)*100, shading='gouraud')
 plt.pcolormesh(t, f, Sxx, shading='gouraud')
 plt.imshow(Sxx)
 plt.ylabel('Frequency [Hz]')
 plt.xlabel('Time [sec]')
+# plt.yscale('log')
+# plt.xscale('log')
 plt.show()
 
 print("exporing data...")
